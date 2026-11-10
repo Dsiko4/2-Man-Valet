@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2 Man Valet | St. Louis Private Event Parking</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #fcfcfb;
+      padding: 24px 16px;
+    }
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      padding: 36px 30px;
+    }
+    header {
+      border-bottom: 2px solid #222;
+      padding-bottom: 18px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #111;
+    }
+    .tagline {
+      font-size: 15px;
+      color: #555;
+      margin-top: 4px;
+    }
+    h2 {
+      font-size: 19px;
+      margin: 28px 0 12px;
+      color: #111;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+    }
+    p {
+      margin-bottom: 14px;
+      font-size: 15px;
+      color: #333;
+    }
+    ul {
+      margin: 10px 0 18px 20px;
+      font-size: 15px;
+      color: #333;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .service-box {
+      background: #f7f7f6;
+      border-left: 3px solid #333;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .service-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: #111;
+    }
+    .service-desc {
+      font-size: 13.5px;
+      color: #555;
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+    form {
+      margin-top: 16px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 9px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-family: inherit;
+      color: #222;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #333;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .row {
+      display: flex;
+      gap: 12px;
+    }
+    .row .form-group {
+      flex: 1;
+    }
+    button[type="submit"] {
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 11px 20px;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+    button[type="submit"]:hover {
+      background: #444;
+    }
+    footer {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+      color: #666;
+    }
+    @media (max-width: 540px) {
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .wrapper {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1>2 Man Valet</h1>
+      <div class="tagline">Two owner-operators parking cars for private parties across the St. Louis region.</div>
+    </header>
+
+    <section>
+      <h2>How We Work</h2>
+      <p>We built this because big valet companies treat private home parties like an afterthought. When you book with us, there is no rotating staff or random crew showing up. The two of us who own the company are the two who park your guests' cars.</p>
+      <ul>
+        <li><strong>We arrive an hour early:</strong> We set up signage, key boxes, lighting, and walk the street or driveway before anyone arrives.</li>
+        <li><strong>Dedicated service:</strong> Your event is our entire focus for the evening, ensuring every guest gets prompt attention right at the door.</li>
+        <li><strong>Fully insured:</strong> We carry general liability and garagekeepers insurance to cover every vehicle in our hands, and we send proof of insurance directly to you or your venue.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Services</h2>
+
+      <div class="service-box">
+        <div class="service-title">Full Valet Service</div>
+        <p class="service-desc">Complete door-to-door parking for private parties and gatherings. Both owners on site, setup an hour ahead, custom directional signage, and a secure lockbox.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-title">Hosted (Complimentary) Service</div>
+        <p class="service-desc">A fully hosted setup where guests never reach for their wallets. We provide complimentary signage and decline all tips at the door.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-title">Dinner Parties</div>
+        <p class="service-desc">Shorter, focused coverage for intimate evening gatherings where driveway space and neighborhood street flow need simple, attentive management.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-title">Directed Self-Park</div>
+        <p class="service-desc">Guests keep their keys while we manage traffic flow, direct cars into available spaces, and offer door and umbrella assistance.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Book Your Date</h2>
+      <p>Drop your party details below. We'll check the calendar, walk the site if needed, and follow up directly with a quote.</p>
+
+      <form action="#" method="POST">
+        <div class="row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="First and last name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(314) 555-0123">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="you@email.com">
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="date">Event Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="guests">Estimated Guest Count</label>
+            <input type="text" id="guests" name="guests" placeholder="e.g. 40-50 guests">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="location">Event Location / Area</label>
+            <input type="text" id="location" name="location" placeholder="City or address in St. Louis region">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Interest</label>
+            <select id="service" name="service">
+              <option value="full-valet">Full Valet Service</option>
+              <option value="hosted">Hosted / Complimentary (No Tipping)</option>
+              <option value="dinner">Dinner Party</option>
+              <option value="directed-self-park">Directed Self-Park</option>
+              <option value="not-sure">Not sure yet / Need advice</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Driveway or Street Notes (Optional)</label>
+          <textarea id="notes" name="notes" placeholder="Tell us a bit about the setup, driveway length, or street parking situation."></textarea>
+        </div>
+
+        <button type="submit">Send Booking Request</button>
+      </form>
+    </section>
+
+    <footer>
+      <p><strong>2 Man Valet LLC</strong> · Serving the greater St. Louis region.</p>
+      <p>Questions? Reach us directly at <a href="tel:3145550199" style="color:#222;">(314) 555-0199</a> or email <a href="mailto:contact@2manvalet.com" style="color:#222;">contact@2manvalet.com</a>.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
