@@ -1,159 +1,498 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Owner-operated valet parking for private events in St. Louis.">
-  <title>2 Man Valet | St. Louis</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2 Man Valet | Private Event Valet in St. Louis</title>
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --navy: #182538;
+      --navy-light: #243650;
+      --cream: #f4f0e6;
+      --cream-card: #fbf9f4;
+      --cream-border: #dfd8c8;
+      --text-main: #1f2630;
+      --text-muted: #525b66;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      max-width: 780px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--cream);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Brand Header matching the Shield Crest */
+    header {
+      background-color: var(--navy);
+      color: var(--cream);
+      text-align: center;
+      padding: 52px 20px 48px;
+      border-bottom: 4px solid #c5b89e;
+    }
+
+    .crest {
+      width: 78px;
+      height: auto;
+      margin: 0 auto 18px;
+      display: block;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .subtitle-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      max-width: 340px;
       margin: 0 auto;
-      padding: 24px 20px;
-      color: #222;
-      background: #fff;
-      font: 16px/1.55 Arial, Helvetica, sans-serif;
     }
-    header { padding-bottom: 18px; border-bottom: 2px solid #222; }
-    h1 { margin: 0; font-size: 30px; }
-    header p { margin: 3px 0 0; color: #555; }
-    h2 { margin: 30px 0 10px; font-size: 21px; }
-    p { margin: 0 0 12px; }
-    ul { padding-left: 22px; }
-    li { margin-bottom: 7px; }
-    .photo { width: 100%; max-height: 250px; margin-top: 20px; object-fit: cover; }
-    .package { padding: 13px 0; border-top: 1px solid #ddd; }
-    .package h3 { display: flex; justify-content: space-between; gap: 16px; margin: 0 0 4px; font-size: 16px; }
-    .package p { margin: 0; color: #444; font-size: 14px; }
-    .extra { margin-top: 10px; font-size: 14px; }
-    .form-row { display: flex; gap: 14px; }
-    .field { flex: 1; min-width: 0; margin-bottom: 13px; }
-    label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
-    input, select, textarea {
+
+    .subtitle-line {
+      height: 1px;
+      flex: 1;
+      background-color: rgba(244, 240, 230, 0.45);
+    }
+
+    .subtitle {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cream);
+      white-space: nowrap;
+    }
+
+    /* Main Single-Page Container */
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 44px 20px 64px;
+    }
+
+    section {
+      margin-bottom: 44px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--cream-border);
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      font-size: 15.5px;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    /* Event Types Grid */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 24px 0 32px;
+    }
+
+    .event-card {
+      background-color: var(--cream-card);
+      border: 1px solid var(--cream-border);
+      border-top: 3px solid var(--navy);
+      border-radius: 4px;
+      padding: 18px 16px;
+    }
+
+    .event-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .event-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* Simple Trust Points */
+    .standards-list {
+      list-style: none;
+      background-color: var(--cream-card);
+      border: 1px solid var(--cream-border);
+      border-radius: 4px;
+      padding: 20px 24px;
+    }
+
+    .standards-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 12px;
+      font-size: 14.5px;
+      color: var(--text-main);
+    }
+
+    .standards-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .standards-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .standards-list strong {
+      color: var(--navy);
+    }
+
+    /* Booking Form */
+    .form-card {
+      background-color: var(--cream-card);
+      border: 1px solid var(--cream-border);
+      border-radius: 6px;
+      padding: 28px 26px;
+      box-shadow: 0 2px 10px rgba(24, 37, 56, 0.04);
+    }
+
+    .form-intro {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .row {
+      display: flex;
+      gap: 14px;
+    }
+
+    .row .form-group {
+      flex: 1;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
       width: 100%;
-      padding: 10px;
-      border: 1px solid #aaa;
-      border-radius: 2px;
-      background: #fff;
-      color: #222;
-      font: inherit;
+      padding: 11px 12px;
+      font-size: 14.5px;
+      font-family: inherit;
+      color: var(--text-main);
+      background-color: #ffffff;
+      border: 1px solid #cfc6b4;
+      border-radius: 4px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
-    textarea { min-height: 84px; resize: vertical; }
-    button {
-      padding: 10px 16px;
-      border: 0;
-      border-radius: 2px;
-      background: #222;
-      color: #fff;
-      font: inherit;
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(24, 37, 56, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: var(--navy);
+      color: var(--cream);
+      border: none;
+      border-radius: 4px;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
       cursor: pointer;
+      margin-top: 4px;
+      transition: background-color 0.15s ease;
     }
-    button:hover { background: #444; }
-    #form-status { margin-top: 10px; font-size: 14px; }
-    footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; }
-    footer p { margin-bottom: 6px; }
-    @media (max-width: 520px) {
-      body { padding: 18px 16px; }
-      .form-row { display: block; }
+
+    button[type="submit"]:hover {
+      background-color: var(--navy-light);
+    }
+
+    #form-status {
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      display: none;
+      padding: 12px;
+      border-radius: 4px;
+    }
+
+    #form-status.success {
+      display: block;
+      background-color: #e6efe8;
+      color: #1f4d2e;
+      border: 1px solid #b8d4c0;
+    }
+
+    #form-status.error {
+      display: block;
+      background-color: #f8e6e6;
+      color: #7a2222;
+      border: 1px solid #e0b4b4;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--navy);
+      color: var(--cream);
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 13.5px;
+    }
+
+    footer p {
+      color: rgba(244, 240, 230, 0.85);
+      margin-bottom: 6px;
+      font-size: 13.5px;
+    }
+
+    footer a {
+      color: var(--cream);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 40px 16px 36px;
+      }
+      header h1 {
+        font-size: 24px;
+        letter-spacing: 4px;
+      }
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .form-card {
+        padding: 22px 18px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>2 Man Valet</h1>
-    <p>Two owner-operators parking cars for private events across St. Louis.</p>
-  </header>
 
-  <img class="photo" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Car parked outside, ready for an event">
+  <header>
+    <!-- Vector recreation of your Shield Crest logo -->
+    <svg class="crest" viewBox="0 0 120 136" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="2 Man Valet Crest">
+      <path d="M12 10H108V66C108 98 60 124 60 124C60 124 12 98 12 66V10Z" stroke="#F4F0E6" stroke-width="4.5" stroke-linejoin="round"/>
+      <!-- Crossed Keys -->
+      <g stroke="#F4F0E6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Key 1 (bottom-left ring to top-right bit) -->
+        <circle cx="42" cy="84" r="9"/>
+        <line x1="48.5" y1="77.5" x2="82" y2="44"/>
+        <line x1="74" y1="52" x2="81" y2="59"/>
+        <line x1="80" y1="46" x2="87" y2="53"/>
+        <!-- Key 2 (bottom-right ring to top-left bit) -->
+        <circle cx="78" cy="84" r="9"/>
+        <line x1="71.5" y1="77.5" x2="38" y2="44"/>
+        <line x1="46" y1="52" x2="39" y2="59"/>
+        <line x1="40" y1="46" x2="33" y2="53"/>
+      </g>
+    </svg>
+
+    <h1>2 Man Valet</h1>
+    <div class="subtitle-wrap">
+      <span class="subtitle-line"></span>
+      <span class="subtitle">Private Event Valet</span>
+      <span class="subtitle-line"></span>
+    </div>
+  </header>
 
   <main>
     <section>
-      <h2>How We Work</h2>
-      <p>We’re a small, owner-run valet service. The two people you book are the two people who park your guests’ cars.</p>
-      <ul>
-        <li>We arrive an hour early to set up signs, lighting, and a key box.</li>
-        <li>We keep valet events under 35 cars so guests aren’t left waiting.</li>
-        <li>We carry general liability and garagekeepers insurance and can send proof to you or your venue.</li>
+      <h2>Experienced Valets. Owner-Operated.</h2>
+      <p>We are two experienced valets who started 2 Man Valet to bring dependable, sharp, and personal parking service to private gatherings across the St. Louis region.</p>
+      <p>When you book with us, you aren't getting a rotating crew of temp workers or careless drivers. The two of us who run the company are the ones greeting your guests at the curb, handling every set of keys, and keeping your driveway and street organized from start to finish.</p>
+
+      <div class="events-grid">
+        <div class="event-card">
+          <h3>Weddings</h3>
+          <p>Smooth arrival and departure flow for private estate weddings, backyard receptions, and rehearsal dinners.</p>
+        </div>
+        <div class="event-card">
+          <h3>Fundraisers</h3>
+          <p>Courteous, well-dressed curb service that sets the right tone for charity galas, donor dinners, and community events.</p>
+        </div>
+        <div class="event-card">
+          <h3>Private &amp; Pop-Up</h3>
+          <p>Tailored parking management for dinner parties, holiday gatherings, housewarmings, and pop-up venues.</p>
+        </div>
+      </div>
+
+      <ul class="standards-list">
+        <li><strong>On site an hour early:</strong> We arrive ahead of schedule to walk the property, place clean directional signage, set up lighting, and organize our key station before your first guest pulls up.</li>
+        <li><strong>Complimentary or standard options:</strong> Whether you want a fully hosted event where guests never reach for a wallet or traditional valet service, we match the setup to your event.</li>
+        <li><strong>Insured &amp; accountable:</strong> We carry commercial general liability and garagekeepers insurance, and we provide proof of coverage directly to you or your venue prior to your event.</li>
       </ul>
     </section>
 
     <section>
-      <h2>Packages</h2>
-      <div class="package">
-        <h3><span>Classic Event Valet</span><span>$550</span></h3>
-        <p>Up to 4 hours and 35 cars. Includes both owners, early setup, signs, and a key box.</p>
-      </div>
-      <div class="package">
-        <h3><span>Hosted Valet</span><span>$850</span></h3>
-        <p>Same service as Classic, but parking is complimentary for your guests. We don’t accept tips.</p>
-      </div>
-      <div class="package">
-        <h3><span>Dinner Party</span><span>$395–$595</span></h3>
-        <p>Up to 3 hours for gatherings of up to 15 cars.</p>
-      </div>
-      <p class="extra"><strong>Directed Self-Park: $450.</strong> We manage parking flow for up to 80 cars while guests keep their keys.</p>
-    </section>
+      <h2>Request a Date</h2>
+      <div class="form-card">
+        <p class="form-intro">Share a few details about your event below. We'll review your date, check parking logistics if needed, and get back to you directly.</p>
 
-    <section>
-      <h2>Ask About Your Date</h2>
-      <p>Send us a few details and we’ll check availability and talk through the parking setup.</p>
-      <form id="booking-form">
-        <div class="form-row">
-          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
-        </div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="form-row">
-          <div class="field"><label for="date">Event date</label><input id="date" name="date" type="date" required></div>
-          <div class="field"><label for="cars">Approximate number of cars</label><input id="cars" name="cars" placeholder="e.g. 25"></div>
-        </div>
-        <div class="form-row">
-          <div class="field"><label for="location">Neighborhood or location</label><input id="location" name="location" placeholder="e.g. Clayton"></div>
-          <div class="field"><label for="package-choice">Package</label>
-            <select id="package-choice" name="package">
-              <option>Classic Event Valet ($550)</option>
-              <option>Hosted Valet ($850)</option>
-              <option>Dinner Party ($395–$595)</option>
-              <option>Directed Self-Park ($450)</option>
-              <option>Not sure yet</option>
-            </select>
+        <form id="booking-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="e7076078-7513-445c-a810-bde19dce88ce">
+          <input type="hidden" name="subject" value="New 2 Man Valet Inquiry">
+          <input type="checkbox" name="botcheck" style="display: none;">
+
+          <div class="row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="First and last name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required placeholder="(314) 555-0123">
+            </div>
           </div>
-        </div>
-        <div class="field"><label for="notes">Parking notes (optional)</label><textarea id="notes" name="notes" placeholder="Anything we should know about the driveway or street parking?"></textarea></div>
-        <button type="submit">Prepare Email</button>
-        <p id="form-status" role="status" aria-live="polite"></p>
-      </form>
+
+          <div class="row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="you@email.com">
+            </div>
+            <div class="form-group">
+              <label for="date">Event Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label for="event_type">Event Type</label>
+              <select id="event_type" name="event_type">
+                <option value="Wedding">Wedding / Rehearsal Dinner</option>
+                <option value="Fundraiser">Fundraiser / Gala</option>
+                <option value="Private Party">Private Party / Dinner</option>
+                <option value="Pop-Up Event">Pop-Up Event</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="guests">Estimated Guest Count</label>
+              <input type="text" id="guests" name="guests" placeholder="e.g. 60 guests">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Event Location / Venue</label>
+            <input type="text" id="location" name="location" placeholder="Address or area in the St. Louis region">
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Event &amp; Parking Details (Optional)</label>
+            <textarea id="notes" name="notes" placeholder="Let us know your approximate event hours, driveway or street setup, or any questions you have."></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn">Send Inquiry</button>
+          <div id="form-status"></div>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p><strong>2 Man Valet LLC</strong> · Serving Ladue, Clayton, Frontenac, Town &amp; Country, Webster Groves, Kirkwood, and greater St. Louis.</p>
-    <p>Call <a href="tel:+13145550199">(314) 555-0199</a> or email <a href="mailto:contact@2manvalet.com">contact@2manvalet.com</a>.</p>
+    <p><strong>2 Man Valet LLC</strong> · Serving the St. Louis Region</p>
+    <p>Questions? Email us at <a href="mailto:contact@2manvalet.com">contact@2manvalet.com</a></p>
   </footer>
 
   <script>
-    const dateField = document.querySelector("#date");
-    dateField.min = new Date().toISOString().slice(0, 10);
+    const form = document.getElementById('booking-form');
+    const status = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
 
-    document.querySelector("#booking-form").addEventListener("submit", (event) => {
-      event.preventDefault();
-      const fields = new FormData(event.currentTarget);
-      const details = [
-        `Name: ${fields.get("name")}`,
-        `Phone: ${fields.get("phone")}`,
-        `Email: ${fields.get("email")}`,
-        `Event date: ${fields.get("date")}`,
-        `Approximate cars: ${fields.get("cars") || "Not specified"}`,
-        `Location: ${fields.get("location") || "Not specified"}`,
-        `Package: ${fields.get("package")}`,
-        `Parking notes: ${fields.get("notes") || "None"}`
-      ].join("\n");
-      const subject = encodeURIComponent(`Valet inquiry: ${fields.get("date")}`);
-      const body = encodeURIComponent(details);
-      window.location.href = `mailto:contact@2manvalet.com?subject=${subject}&body=${body}`;
-      document.querySelector("#form-status").textContent = "Your email app should open with the request filled in. Press send there to reach us.";
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      status.className = '';
+      status.style.display = 'none';
+
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        });
+        const result = await response.json();
+        if (response.status === 200) {
+          status.textContent = 'Thanks! We received your details and will reach out shortly.';
+          status.className = 'success';
+          form.reset();
+        } else {
+          status.textContent = result.message || 'Something went wrong. Please try again.';
+          status.className = 'error';
+        }
+      } catch (error) {
+        status.textContent = 'Network error. Please check your connection and try again.';
+        status.className = 'error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Inquiry';
+      }
     });
   </script>
+
 </body>
 </html>
