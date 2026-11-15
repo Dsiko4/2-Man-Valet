@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2 Man Valet | Private Event Valet in St. Louis</title>
+  <meta name="description" content="Private event valet in St. Louis, run by owners Daniel and Jude. Weddings, fundraisers, dinner parties and more. Call or text (773) 655-4722.">
+  <meta name="theme-color" content="#182538">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://2manvalet.com/">
+  <meta property="og:title" content="2 Man Valet | Private Event Valet in St. Louis">
+  <meta property="og:description" content="Private event valet in St. Louis, run by owners Daniel and Jude. Weddings, fundraisers, dinner parties and more. Call or text (773) 655-4722.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 136'%3E%3Cpath d='M12 10H108V66C108 98 60 124 60 124C60 124 12 98 12 66V10Z' fill='%23182538' stroke='%23182538' stroke-width='4.5' stroke-linejoin='round'/%3E%3Cg stroke='%23F4F0E6' stroke-width='6' stroke-linecap='round' fill='none'%3E%3Ccircle cx='42' cy='84' r='9'/%3E%3Cline x1='48.5' y1='77.5' x2='82' y2='44'/%3E%3Cline x1='74' y1='52' x2='81' y2='59'/%3E%3Cline x1='80' y1='46' x2='87' y2='53'/%3E%3Ccircle cx='78' cy='84' r='9'/%3E%3Cline x1='71.5' y1='77.5' x2='38' y2='44'/%3E%3Cline x1='46' y1='52' x2='39' y2='59'/%3E%3Cline x1='40' y1='46' x2='33' y2='53'/%3E%3C/g%3E%3C/svg%3E">
   <style>
     :root {
       --navy: #182538;
@@ -212,6 +219,7 @@
     input[type="email"],
     input[type="tel"],
     input[type="date"],
+    input[type="time"],
     select,
     textarea {
       width: 100%;
@@ -255,6 +263,11 @@
 
     button[type="submit"]:hover {
       background-color: var(--navy-light);
+    }
+
+    .form-intro a {
+      color: var(--navy);
+      font-weight: 600;
     }
 
     #form-status {
@@ -326,7 +339,7 @@
 
   <header>
     <!-- Vector recreation of your Shield Crest logo -->
-    <svg class="crest" viewBox="0 0 120 136" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="2 Man Valet Crest">
+    <svg class="crest" viewBox="0 0 120 136" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2 Man Valet Crest">
       <path d="M12 10H108V66C108 98 60 124 60 124C60 124 12 98 12 66V10Z" stroke="#F4F0E6" stroke-width="4.5" stroke-linejoin="round"/>
       <!-- Crossed Keys -->
       <g stroke="#F4F0E6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
@@ -354,7 +367,7 @@
   <main>
     <section>
       <h2>Run by the two guys who park the cars</h2>
-      <p>We're two experienced valets who started 2 Man Valet to handle parking for private events around St. Louis.</p>
+      <p>We're Daniel and Jude, two experienced valets who started 2 Man Valet to handle parking for private events around St. Louis.</p>
       <p>You won't get a rotating crew of temp drivers. The two of us who own the company greet your guests at the curb, hold every set of keys, and keep the driveway and street clear until the last car leaves.</p>
 
       <div class="events-grid">
@@ -374,6 +387,7 @@
 
       <ul class="standards-list">
         <li><strong>There before your guests:</strong> We show up ahead of your first guest to walk the property, put out signs, set up lighting, and get our key station ready.</li>
+        <li><strong>Site visit included:</strong> We'll come out before your event to look at the property and plan where the cars go, at no extra cost.</li>
         <li><strong>Hosted or standard valet:</strong> You can cover the valet so guests never reach for their wallets, or go with regular valet service. We'll set it up whichever way fits your event.</li>
         <li><strong>Insured:</strong> We carry commercial general liability and garagekeepers insurance, and we'll send proof of coverage to you or your venue before the event.</li>
       </ul>
@@ -382,7 +396,7 @@
     <section>
       <h2>Request a Date</h2>
       <div class="form-card">
-        <p class="form-intro">Tell us a little about your event. We'll check the date, look at the parking setup if we need to, and get back to you.</p>
+        <p class="form-intro">Tell us a little about your event and we'll check the date and get back to you. If you'd rather talk it through, call or text <a href="tel:+17736554722">(773) 655-4722</a>.</p>
 
         <form id="booking-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="e7076078-7513-445c-a810-bde19dce88ce">
@@ -428,6 +442,17 @@
             </div>
           </div>
 
+          <div class="row">
+            <div class="form-group">
+              <label for="start_time">Start Time</label>
+              <input type="time" id="start_time" name="start_time" required>
+            </div>
+            <div class="form-group">
+              <label for="end_time">End Time</label>
+              <input type="time" id="end_time" name="end_time" required>
+            </div>
+          </div>
+
           <div class="form-group">
             <label for="location">Event Location / Venue</label>
             <input type="text" id="location" name="location" placeholder="Address or area in the St. Louis region">
@@ -435,7 +460,7 @@
 
           <div class="form-group">
             <label for="notes">Event &amp; Parking Details (Optional)</label>
-            <textarea id="notes" name="notes" placeholder="Rough event hours, driveway or street setup, any questions you have."></textarea>
+            <textarea id="notes" name="notes" placeholder="Driveway or street setup, gate codes, any questions you have."></textarea>
           </div>
 
           <button type="submit" id="submit-btn">Send Inquiry</button>
@@ -447,7 +472,8 @@
 
   <footer>
     <p><strong>2 Man Valet LLC</strong> · Serving the St. Louis area</p>
-    <p>Questions? Email us at <a href="mailto:contact@2manvalet.com">contact@2manvalet.com</a></p>
+    <p>Call or text <a href="tel:+17736554722">(773) 655-4722</a></p>
+    <p>Email <a href="mailto:contact@2manvalet.com">contact@2manvalet.com</a></p>
   </footer>
 
   <script>
