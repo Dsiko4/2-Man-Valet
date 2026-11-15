@@ -353,36 +353,36 @@
 
   <main>
     <section>
-      <h2>Experienced Valets. Owner-Operated.</h2>
-      <p>We are two experienced valets who started 2 Man Valet to bring dependable, sharp, and personal parking service to private gatherings across the St. Louis region.</p>
-      <p>When you book with us, you aren't getting a rotating crew of temp workers or careless drivers. The two of us who run the company are the ones greeting your guests at the curb, handling every set of keys, and keeping your driveway and street organized from start to finish.</p>
+      <h2>Run by the two guys who park the cars</h2>
+      <p>We're two experienced valets who started 2 Man Valet to handle parking for private events around St. Louis.</p>
+      <p>You won't get a rotating crew of temp drivers. The two of us who own the company greet your guests at the curb, hold every set of keys, and keep the driveway and street clear until the last car leaves.</p>
 
       <div class="events-grid">
         <div class="event-card">
           <h3>Weddings</h3>
-          <p>Smooth arrival and departure flow for private estate weddings, backyard receptions, and rehearsal dinners.</p>
+          <p>Estate weddings, backyard receptions, and rehearsal dinners. We keep arrivals moving and get everyone out easy at the end of the night.</p>
         </div>
         <div class="event-card">
           <h3>Fundraisers</h3>
-          <p>Courteous, well-dressed curb service that sets the right tone for charity galas, donor dinners, and community events.</p>
+          <p>Charity galas, donor dinners, and community events, with two well-dressed valets at the curb when your guests pull in.</p>
         </div>
         <div class="event-card">
           <h3>Private &amp; Pop-Up</h3>
-          <p>Tailored parking management for dinner parties, holiday gatherings, housewarmings, and pop-up venues.</p>
+          <p>Dinner parties, holiday gatherings, housewarmings, and pop-up venues. We'll figure out where the cars go so you don't have to.</p>
         </div>
       </div>
 
       <ul class="standards-list">
-        <li><strong>On site an hour early:</strong> We arrive ahead of schedule to walk the property, place clean directional signage, set up lighting, and organize our key station before your first guest pulls up.</li>
-        <li><strong>Complimentary or standard options:</strong> Whether you want a fully hosted event where guests never reach for a wallet or traditional valet service, we match the setup to your event.</li>
-        <li><strong>Insured &amp; accountable:</strong> We carry commercial general liability and garagekeepers insurance, and we provide proof of coverage directly to you or your venue prior to your event.</li>
+        <li><strong>There before your guests:</strong> We show up ahead of your first guest to walk the property, put out signs, set up lighting, and get our key station ready.</li>
+        <li><strong>Hosted or standard valet:</strong> You can cover the valet so guests never reach for their wallets, or go with regular valet service. We'll set it up whichever way fits your event.</li>
+        <li><strong>Insured:</strong> We carry commercial general liability and garagekeepers insurance, and we'll send proof of coverage to you or your venue before the event.</li>
       </ul>
     </section>
 
     <section>
       <h2>Request a Date</h2>
       <div class="form-card">
-        <p class="form-intro">Share a few details about your event below. We'll review your date, check parking logistics if needed, and get back to you directly.</p>
+        <p class="form-intro">Tell us a little about your event. We'll check the date, look at the parking setup if we need to, and get back to you.</p>
 
         <form id="booking-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="e7076078-7513-445c-a810-bde19dce88ce">
@@ -435,7 +435,7 @@
 
           <div class="form-group">
             <label for="notes">Event &amp; Parking Details (Optional)</label>
-            <textarea id="notes" name="notes" placeholder="Let us know your approximate event hours, driveway or street setup, or any questions you have."></textarea>
+            <textarea id="notes" name="notes" placeholder="Rough event hours, driveway or street setup, any questions you have."></textarea>
           </div>
 
           <button type="submit" id="submit-btn">Send Inquiry</button>
@@ -446,7 +446,7 @@
   </main>
 
   <footer>
-    <p><strong>2 Man Valet LLC</strong> · Serving the St. Louis Region</p>
+    <p><strong>2 Man Valet LLC</strong> · Serving the St. Louis area</p>
     <p>Questions? Email us at <a href="mailto:contact@2manvalet.com">contact@2manvalet.com</a></p>
   </footer>
 
@@ -477,7 +477,7 @@
         });
         const result = await response.json();
         if (response.status === 200) {
-          status.textContent = 'Thanks! We received your details and will reach out shortly.';
+          status.textContent = "Thanks! We got your info and we'll be in touch soon.";
           status.className = 'success';
           form.reset();
         } else {
